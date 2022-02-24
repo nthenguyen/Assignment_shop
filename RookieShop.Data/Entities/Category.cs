@@ -14,6 +14,7 @@ namespace RookieShop.Data.Entities
         public bool IsShowOnHome { set; get; }
         public int? ParentId { set; get; }
         public Status Status { set; get; }
+        public string Name { set; get; }
 
         public List<ProductInCategory> ProductInCategories { get; set; }
     }

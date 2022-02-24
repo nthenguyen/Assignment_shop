@@ -14,6 +14,9 @@ namespace RookieShop.Data.Entities
         public int Stock { set; get; }
         public int ViewCount { set; get; }
         public DateTime DateCreated { set; get; }
+        public string Name { set; get; }
+        public string Detail { get; set; }
+        public string Description { set; get; }
 
         public bool? IsFeatured { get; set; }
 

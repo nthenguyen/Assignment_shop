@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RookieShop.Data.EF;
 
@@ -11,9 +12,10 @@ using RookieShop.Data.EF;
 namespace RookieShop.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    partial class EShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220224090219_Add_Data_DataSeed")]
+    partial class Add_Data_DataSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,13 +99,6 @@ namespace RookieShop.Data.Migrations
                     b.HasKey("RoleId", "UserId");
 
                     b.ToTable("AppUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -163,16 +158,6 @@ namespace RookieShop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "75c25f06-3ba3-4175-b40f-ca23715ee00c",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("RookieShop.Data.Entities.AppUser", b =>
@@ -239,27 +224,6 @@ namespace RookieShop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "653664bf-7496-41da-bdc7-4f9dd1505bc2",
-                            Dob = new DateTime(2000, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "ntnguyen@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Nguyen",
-                            LastName = "Nguyen",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ntnguyen@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHD9GwpvcW9No/UqW/iAFahcB0FI4NvfECAE6Uo3MTH2hp4LRdOpnGWazKdMnSFUVQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("RookieShop.Data.Entities.Cart", b =>
@@ -389,7 +353,7 @@ namespace RookieShop.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 2, 24, 16, 18, 2, 137, DateTimeKind.Local).AddTicks(482));
+                        .HasDefaultValue(new DateTime(2022, 2, 24, 16, 2, 18, 898, DateTimeKind.Local).AddTicks(464));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -496,7 +460,7 @@ namespace RookieShop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2022, 2, 24, 16, 18, 2, 138, DateTimeKind.Local).AddTicks(3952),
+                            DateCreated = new DateTime(2022, 2, 24, 16, 2, 18, 899, DateTimeKind.Local).AddTicks(4685),
                             Description = "Áo hoodie dành cho nam",
                             Detail = "Áo hoodie nam",
                             Name = "Áo Hoodie",
@@ -508,7 +472,7 @@ namespace RookieShop.Data.Migrations
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(2022, 2, 24, 16, 18, 2, 138, DateTimeKind.Local).AddTicks(3963),
+                            DateCreated = new DateTime(2022, 2, 24, 16, 2, 18, 899, DateTimeKind.Local).AddTicks(4691),
                             Description = "Áo jacket dành cho nam",
                             Detail = "Áo jacket nam",
                             Name = "Áo jacket",
