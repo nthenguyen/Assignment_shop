@@ -5,7 +5,6 @@ using RookieShop.Data.EF;
 using RookieShop.Data.Entities;
 using RookieShop.Utilities.Exceptions;
 using RookieShop.ViewModels.Catalog.Products;
-using RookieShop.ViewModels.Catalog.Products.Manage;
 using RookieShop.ViewModels.Common;
 using System;
 using System.Collections.Generic;
@@ -87,7 +86,7 @@ namespace RookieShop.Application.Catalog.Products
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagedRequest request)
+        public async Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagedRequest request)
         {
             //1. select join
             var query = from p in _context.Products

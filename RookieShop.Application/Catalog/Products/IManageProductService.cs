@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using RookieShop.ViewModels.Catalog.Products;
-using RookieShop.ViewModels.Catalog.Products.Manage;
 using RookieShop.ViewModels.Common;
 
 namespace RookieShop.Application.Catalog.Products
@@ -19,7 +18,7 @@ namespace RookieShop.Application.Catalog.Products
 
         Task AddViewCount(int productId);
 
-        Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagedRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagedRequest request);
 
         Task<int> AddImages(int productId, List<IFormFile> files);
 

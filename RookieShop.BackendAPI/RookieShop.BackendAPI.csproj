@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RookieShop.Application\RookieShop.Application.csproj" />
+    <ProjectReference Include="..\RookieShop.Data\RookieShop.Data.csproj" />
+    <ProjectReference Include="..\RookieShop.Utilities\RookieShop.Utilities.csproj" />
+    <ProjectReference Include="..\RookieShop.ViewModels\RookieShop.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

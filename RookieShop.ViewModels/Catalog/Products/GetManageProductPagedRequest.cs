@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RookieShop.ViewModels.Catalog.Products.Manage
+namespace RookieShop.ViewModels.Catalog.Products
 {
-     public class GetProductPagedRequest : PagedRequestBase
+     public class GetManageProductPagedRequest : PagedRequestBase
     {
         public string Keyword { get; set; }
 
