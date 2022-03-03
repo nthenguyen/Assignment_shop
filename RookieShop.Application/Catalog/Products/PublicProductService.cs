@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RookieShop.Application.Catalog.Products.Dtos;
-using RookieShop.Application.Catalog.Products.Dtos.Public;
-using RookieShop.Application.Dtos;
 using RookieShop.Data.EF;
+using RookieShop.ViewModels.Catalog.Products;
+using RookieShop.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,30 @@ namespace RookieShop.Application.Catalog.Products
         {
             _context = context;
         }
-        public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetProductPagedRequest request)
+
+        public async Task<List<ProductViewModel>> GetAll()
+        {
+            var query = from p in _context.Products
+                        join pic in _context.ProductInCategories on p.Id equals pic.ProductId
+                        join c in _context.Categories on pic.CategoryId equals c.Id
+                        select new { p, pic };
+
+            var data = await query.Select(x => new ProductViewModel()
+                {
+                    Id = x.p.Id,
+                    Name = x.p.Name,
+                    Price = x.p.Price,
+                    OriginalPrice = x.p.OriginalPrice,
+                    Stock = x.p.Stock,
+                    ViewCount = x.p.ViewCount,
+                    DateCreated = x.p.DateCreated,
+                    Detail = x.p.Detail,
+                    Description = x.p.Description,
+                }).ToListAsync();
+            return data;
+        }
+
+        public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagedRequest request)
         {
             //1. select join
             var query = from p in _context.Products

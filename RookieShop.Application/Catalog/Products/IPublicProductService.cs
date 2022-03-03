@@ -1,6 +1,5 @@
-﻿using RookieShop.Application.Catalog.Products.Dtos;
-using RookieShop.Application.Catalog.Products.Dtos.Public;
-using RookieShop.Application.Dtos;
+﻿using RookieShop.ViewModels.Catalog.Products;
+using RookieShop.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,8 @@ namespace RookieShop.Application.Catalog.Products
 {
     public interface IPublicProductService
     {
-        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetProductPagedRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagedRequest request);
+
+        Task<List<ProductViewModel>> GetAll();
     }
 }
