@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RookieShop.Data\RookieShop.Data.csproj" />
     <ProjectReference Include="..\RookieShop.Utilities\RookieShop.Utilities.csproj" />
+    <ProjectReference Include="..\RookieShop.ViewModels\RookieShop.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

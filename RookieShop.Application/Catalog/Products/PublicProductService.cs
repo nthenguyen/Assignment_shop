@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RookieShop.Application.Catalog.Products.Dtos;
-using RookieShop.Application.Catalog.Products.Dtos.Public;
-using RookieShop.Application.Dtos;
 using RookieShop.Data.EF;
+using RookieShop.ViewModels.Catalog.Products;
+using RookieShop.ViewModels.Catalog.Products.Public;
+using RookieShop.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

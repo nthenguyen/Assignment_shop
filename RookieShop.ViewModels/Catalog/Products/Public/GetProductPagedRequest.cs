@@ -1,11 +1,12 @@
-﻿using RookieShop.Application.Dtos;
+﻿
+using RookieShop.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RookieShop.Application.Catalog.Products.Dtos.Public
+namespace RookieShop.ViewModels.Catalog.Products.Public
 {
     public class GetProductPagedRequest : PagedRequestBase
     {

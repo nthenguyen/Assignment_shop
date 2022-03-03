@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RookieShop.Application.Catalog.Products.Dtos.Manage
+namespace RookieShop.ViewModels.Catalog.Products.Manage
 {
     public class ProductUpdateRequest
     {
@@ -12,5 +13,6 @@ namespace RookieShop.Application.Catalog.Products.Dtos.Manage
         public string Name { set; get; }
         public string Detail { get; set; }
         public string Description { set; get; }
+        public IFormFile Image { get; set; }
     }
 }
