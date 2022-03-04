@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using RookieShop.ViewModels.Catalog.ProductImages;
 using RookieShop.ViewModels.Catalog.Products;
 using RookieShop.ViewModels.Common;
 
@@ -12,6 +13,8 @@ namespace RookieShop.Application.Catalog.Products
 
         Task<int> Delete(int productId);
 
+        Task<ProductViewModel> GetById(int productId);
+
         Task<bool> UpdatePrice(int productId, decimal newPrice);
 
         Task<bool> UpdateStock(int productId, int addQuantity);
@@ -20,12 +23,14 @@ namespace RookieShop.Application.Catalog.Products
 
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagedRequest request);
 
-        Task<int> AddImages(int productId, List<IFormFile> files);
+        Task<int> AddImage(int productId, ProductImageCreateRequest request);
 
-        Task<int> UpdateImages(int imageId, string Caption, bool isDefault);
+        Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
 
-        Task<int> RemoveImages(int imageId);
+        Task<int> RemoveImage(int imageId);
 
-        Task<List<ProductImageViewModel>> GetListImage(int productId);
+        Task<ProductImageViewModel> GetImageById(int imageId);
+
+        Task<List<ProductImageViewModel>> GetListImages(int productId);
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.CustomerSite", "Rookie.CustomerSite\Rookie.CustomerSite.csproj", "{D866A0D9-58E7-406C-9BF7-2513AE934922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieShop.CustomerSite", "Rookie.CustomerSite\RookieShop.CustomerSite.csproj", "{D866A0D9-58E7-406C-9BF7-2513AE934922}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieShop.Backend", "RookieShop.Backend\RookieShop.Backend.csproj", "{754581C4-0CE4-4724-949D-FDDE64EC7163}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieShop.Utilities", "Roo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieShop.ViewModels", "RookieShop.ViewModels\RookieShop.ViewModels.csproj", "{030F4DF5-C1F8-4E7E-A3C0-B3806567D2C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RookieShop.BackendAPI", "RookieShop.BackendAPI\RookieShop.BackendAPI.csproj", "{3B174EAC-447D-4A71-8C63-87440F0068ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RookieShop.BackendAPI", "RookieShop.BackendAPI\RookieShop.BackendAPI.csproj", "{3B174EAC-447D-4A71-8C63-87440F0068ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

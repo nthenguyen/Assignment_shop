@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using RookieShop.Application.Catalog.Products;
+using RookieShop.Application.Common;
 using RookieShop.Data.EF;
 using RookieShop.Utilities.Constant;
 
@@ -11,8 +12,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EShopDbContext>(options => options.UseSqlServer(
    builder.Configuration.GetConnectionString(SystemConstants.MainConnectionString)
     ));
+
 //Declare DI
+builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IPublicProductService, PublicProductService>();
+builder.Services.AddTransient<IManageProductService, ManageProductService>();
+
 //Swagger
 builder.Services.AddSwaggerGen(options =>
 {

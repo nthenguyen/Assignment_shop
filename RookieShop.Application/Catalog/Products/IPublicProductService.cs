@@ -13,5 +13,6 @@ namespace RookieShop.Application.Catalog.Products
         Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagedRequest request);
 
         Task<List<ProductViewModel>> GetAll();
+
     }
 }
