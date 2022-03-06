@@ -29,8 +29,4 @@
     <ProjectReference Include="..\RookieShop.Data\RookieShop.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\themes\less\oregional\" />
-  </ItemGroup>
-
 </Project>
