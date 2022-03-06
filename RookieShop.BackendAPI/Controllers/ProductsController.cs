@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RookieShop.Application.Catalog.Products;
 using RookieShop.ViewModels.Catalog.ProductImages;
 using RookieShop.ViewModels.Catalog.Products;
@@ -7,6 +8,7 @@ namespace RookieShop.BackendAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         public readonly IPublicProductService _publicProductService;
