@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using RookieShop.Application.Catalog.Products;
 using RookieShop.Application.Common;
+using RookieShop.Application.System.Users;
 using RookieShop.Data.EF;
+using RookieShop.Data.Entities;
 using RookieShop.Utilities.Constant;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,11 +15,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EShopDbContext>(options => options.UseSqlServer(
    builder.Configuration.GetConnectionString(SystemConstants.MainConnectionString)
     ));
+builder.Services.AddIdentity<AppUser,AppRole>()
+    .AddEntityFrameworkStores<EShopDbContext>().AddDefaultTokenProviders();
 
 //Declare DI
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IPublicProductService, PublicProductService>();
 builder.Services.AddTransient<IManageProductService, ManageProductService>();
+builder.Services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
+builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 //Swagger
 builder.Services.AddSwaggerGen(options =>
